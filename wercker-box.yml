@@ -15,15 +15,7 @@ script: |
   sudo cat /etc/lsb-release
   sudo apt-get update -y
   sudo apt-get install -y wget build-essential autoconf automake pkg-config imagemagick imagemagick-common libmagickcore-dev  libmagickcore4 libmagickcore4-extra  libmagickwand-dev libmagickwand4 luajit luarocks
-  #sudo luarocks install luasocket --from=http://luarocks.logiceditor.com/rocks/
-  #sudo luarocks install mediator_lua --server=http://rocks.moonscript.org
-  #sudo luarocks install ansicolors --server=http://rocks.moonscript.org
-  #sudo luarocks install penlight --server=http://rocks.moonscript.org
-  #sudo luarocks install say --server=http://rocks.moonscript.org
-  #sudo luarocks install luafilesystem --server=http://rocks.moonscript.org
-  #sudo luarocks install dkjson --server=http://rocks.moonscript.org
-  #sudo luarocks install luassert --server=http://rocks.moonscript.org
-  #sudo luarocks install lua_cliargs  --server=http://rocks.moonscript.org
+  sudo luarocks install luassert --server=http://rocks.moonscript.org
   sudo luarocks install busted --only0server=http://rocks.moonscript.org
   which lua
   sudo unlink /usr/bin/lua
