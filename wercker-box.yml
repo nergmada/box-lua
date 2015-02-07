@@ -1,5 +1,5 @@
 name: luajit-magick
-version: 0.1.0
+version: 0.2.1
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type: service
 platform: ubuntu@12.04
@@ -25,5 +25,10 @@ script: |
   #sudo luarocks install luassert --server=http://rocks.moonscript.org
   #sudo luarocks install lua_cliargs  --server=http://rocks.moonscript.org
   sudo luarocks install busted --only0server=http://rocks.moonscript.org
-  sudo unlink /usr/bin/lua && sudo ln -s /usr/bin/luajit /usr/bin/lua
+  which lua
+  which luajit
+  sudo unlink /usr/bin/lua
+  sudo ln -s /usr/bin/luajit-2.0.0-beta9 /usr/bin/lua
+  which lua
+  which luajit
 
