@@ -1,5 +1,5 @@
 name: luajit-magick
-version: 0.2.1
+version: 0.2.2
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type: service
 platform: ubuntu@12.04
@@ -20,6 +20,7 @@ script: |
   which lua
   sudo unlink /usr/bin/lua
   sudo ln -s /usr/bin/luajit-2.0.0-beta9 /usr/bin/lua
+  sudo ln -s /usr/bin/luajit-2.0.0-beta9 /usr/bin/luajit
   which lua
   which luajit
 
