@@ -22,6 +22,11 @@ The MIT License (MIT)
 
 # Changelog
 
+## 0.2.2
+
+- Create luajit symbolic link
+
+
 ## 0.1.0
 
 - Initial release
