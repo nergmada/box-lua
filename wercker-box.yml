@@ -14,7 +14,7 @@ packages:
 script: |
   sudo cat /etc/lsb-release
   sudo apt-get update -y
-  sudo apt-get install -y wget build-essential autoconf automake pkg-config imagemagick imagemagick-common libmagickcore-dev  libmagickcore5 libmagickcore5-extra  libmagickwand-dev libmagickwand5 luajit luarocks lua-sec
+  sudo apt-get install -y wget build-essential autoconf automake pkg-config imagemagick imagemagick-common libmagickcore-dev  libmagickcore4 libmagickcore4-extra  libmagickwand-dev libmagickwand4 luajit luarocks
   sudo luarocks install luasocket --from=http://luarocks.logiceditor.com/rocks/
   sudo luarocks install busted --server=http://rocks.moonscript.org
 
