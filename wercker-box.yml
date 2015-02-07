@@ -3,7 +3,7 @@ version: 0.2.2
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type: service
 platform: ubuntu@12.04
-description: wercker box for lua
+description: This box contains lua5.0-5.2,luajit-2.0.0-beta9, busted and imagemagick. Ideally for Lua testing generally and some image processing stuff.
 keywords:
   - lua
   - luajit
