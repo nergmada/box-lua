@@ -43,8 +43,19 @@ RUN mkdir -p /nginx
 RUN unlink /usr/bin/lua && sudo ln -s /usr/bin/luajit /usr/bin/lua
 
 RUN sudo luarocks install luasocket --from=http://luarocks.logiceditor.com/rocks/
-RUN sudo luarocks install  magick   --from=http://luarocks.logiceditor.com/rocks/
+RUN sudo luarocks install magick   --from=http://luarocks.logiceditor.com/rocks/
 
+RUN sudo apt-get install -y openssl
+#RUN sudo luarocks install luassert --only-server=http://rocks.moonscript.org
+RUN sudo luarocks install luasec --only-server=http://rocks.moonscript.org OPENSSL_LIBDIR=/usr/lib/x86_64-linux-gnu
+RUN sudo luarocks install busted --only-server=http://rocks.moonscript.org
+RUN which lua
+#RUN sudo unlink /usr/bin/lua
+#RUN sudo ln -s /usr/bin/luajit-2.0.0-beta9 /usr/bin/lua
+#RUN sudo ln -s /usr/bin/luajit-2.0.0-beta9 /usr/bin/luajit
+RUN which lua
+RUN which luajit
+RUN which nginx
 
 # ----------------- #
 #   Clean up        #
