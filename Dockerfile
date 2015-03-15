@@ -50,17 +50,17 @@ RUN sudo apt-get install -y openssl
 RUN sudo luarocks install luasec --only-server=http://rocks.moonscript.org OPENSSL_LIBDIR=/usr/lib/x86_64-linux-gnu
 RUN sudo luarocks install busted --only-server=http://rocks.moonscript.org
 RUN which lua
-#RUN sudo unlink /usr/bin/lua
-#RUN sudo ln -s /usr/bin/luajit-2.0.0-beta9 /usr/bin/lua
-#RUN sudo ln -s /usr/bin/luajit-2.0.0-beta9 /usr/bin/luajit
 RUN which lua
 RUN which luajit
 RUN which nginx
+
+WORKDIR /etc/nginx/
+
+RUN sudo wget https://github.com/pintsized/lua-resty-http/archive/v0.05.tar.gz && tar xvf v0.05.tar.gz
 
 # ----------------- #
 #   Clean up        #
 # ----------------- #
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-WORKDIR /etc/nginx/
 

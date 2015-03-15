@@ -22,6 +22,12 @@ The MIT License (MIT)
 
 # Changelog
 
+## 0.3
+  - Add luasec,magick
+  - Ubuntu 14.04
+  - Docker
+  - Ework
+
 ## 0.2.2
 
 - Create luajit symbolic link
