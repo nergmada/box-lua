@@ -15,8 +15,9 @@ RUN         apt-get -y upgrade
 # ---------------- #
 
 # Image Magick
-RUN sudo apt-get install -y \
-  imagemagick imagemagick-common libmagickcore-dev  libmagickcore5 libmagickcore5-extra  libmagickwand-dev libmagickwand5
+RUN wget http://www.imagemagick.org/download/releases/ImageMagick-6.8.9-10.tar.bz2
+RUN tar xjf ImageMagick-6.8.9-10.tar.bz2
+RUN cd ImageMagick-6.8.9-10 && ./configure --prefix=/usr && make && make install.
 
 RUN sudo apt-get install -y tcpdump htop
 
