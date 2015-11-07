@@ -5,6 +5,8 @@ MAINTAINER  Vinh Nguyen <kurei@axcoto.com>
 # Fix debconf: unable to initialize frontend: Dialog
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
+RUN touch /build.1
+
 RUN         echo 'deb http://us.archive.ubuntu.com/ubuntu/ trusty universe' >> /etc/apt/sources.list
 RUN         apt-get -y update
 RUN         apt-get -y upgrade
@@ -23,8 +25,9 @@ RUN sudo apt-get install -y \
 RUN sudo apt-get build-dep -y imagemagick
 RUN sudo apt-get install -y curl wget
 
-RUN wget http://www.imagemagick.org/download/releases/ImageMagick-6.8.9-10.tar.bz2
-RUN tar xjf ImageMagick-6.8.9-10.tar.bz2
+#RUN wget http://www.imagemagick.org/download/releases/ImageMagick-6.8.9-10.tar.bz2
+RUN wget http://www.imagemagick.org/download/releases/ImageMagick-6.8.9-10.tar.xz
+RUN tar xf ImageMagick-6.8.9-10.tar.xz
 RUN cd ImageMagick-6.8.9-10 && ./configure --prefix=/usr && make && make install
 
 RUN sudo apt-get install -y tcpdump htop
