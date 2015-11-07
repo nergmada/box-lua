@@ -14,10 +14,18 @@ RUN         apt-get -y upgrade
 #   Installation   #
 # ---------------- #
 
+RUN apt-get -y update --fix-missing
+
 # Image Magick
+RUN sudo apt-get install -y \
+  build-essential checkinstall libx11-dev libxext-dev zlib1g-dev libpng12-dev libjpeg-dev libfreetype6-dev libxml2-dev --fix-missing
+
+RUN sudo apt-get build-dep -y imagemagick
+RUN sudo apt-get install -y curl wget
+
 RUN wget http://www.imagemagick.org/download/releases/ImageMagick-6.8.9-10.tar.bz2
 RUN tar xjf ImageMagick-6.8.9-10.tar.bz2
-RUN cd ImageMagick-6.8.9-10 && ./configure --prefix=/usr && make && make install.
+RUN cd ImageMagick-6.8.9-10 && ./configure --prefix=/usr && make && make install
 
 RUN sudo apt-get install -y tcpdump htop
 
@@ -27,6 +35,10 @@ RUN sudo apt-get install -y curl wget htop
 # Build
 RUN sudo apt-get install -y \
   wget build-essential autoconf automake pkg-config libssl-dev openssl libxslt-dev
+
+# Lib RSVG
+RUN apt-get install librsvg2-2
+RUN apt-get install librsvg2-bin
 
 # Lua
 RUN sudo apt-get install -y luajit luarocks
