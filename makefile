@@ -6,5 +6,5 @@ build:
 	docker build -t $(OWNER)/$(NAME):$(VERSION) .
 
 push:
-	docker push $(OWNER)/$(NAME):$(VERSION)  $(OWNER)/$(NAME):$(VERSION) 
+	docker push $(OWNER)/$(NAME):$(VERSION)
 
