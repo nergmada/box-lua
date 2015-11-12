@@ -50,11 +50,11 @@ RUN apt-get install librsvg2-bin
 RUN sudo apt-get install -y luajit luarocks
 
 # OpenResty
-RUN sudo wget http://openresty.org/download/ngx_openresty-1.7.7.2.tar.gz
-RUN tar -zxvf ngx_openresty-1.7.7.2.tar.gz
-#RUN sudo wget https://github.com/openresty/ngx_openresty/archive/v1.7.7.2.tar.gz
-#RUN tar -zxvf v1.7.7.2.tar.gz
-RUN cd ngx_openresty-1.7.7.2 && ./configure --with-luajit --sbin-path=/usr/sbin/nginx  --conf-path=/etc/nginx/nginx.conf  --error-log-path=/var/log/nginx/error.log  --http-client-body-temp-path=/var/lib/nginx/body  --http-fastcgi-temp-path=/var/lib/nginx/fastcgi  --http-log-path=/var/log/nginx/access.log  --http-proxy-temp-path=/var/lib/nginx/proxy  --http-scgi-temp-path=/var/lib/nginx/scg --http-uwsgi-temp-path=/var/lib/nginx/uwsgi  --lock-path=/var/lock/nginx.lock      --pid-path=/var/run/nginx.pid  --with-http_gzip_static_module --with-http_realip_module  --with-http_stub_status_module  --with-http_ssl_module  --with-http_sub_module --with-sha1=/usr/include/openssl  --with-md5=/usr/include/openssl && make && sudo make install
+RUN sudo wget http://openresty.org/download/ngx_openresty-1.9.3.1.tar.gz
+RUN tar -zxvf ngx_openresty-1.9.3.1.tar.gz
+#RUN sudo wget https://github.com/openresty/ngx_openresty/archive/v1.9.3.1.tar.gz
+#RUN tar -zxvf v1.9.3.1.tar.gz
+RUN cd ngx_openresty-1.9.3.1 && ./configure --with-luajit --sbin-path=/usr/sbin/nginx  --conf-path=/etc/nginx/nginx.conf  --error-log-path=/var/log/nginx/error.log  --http-client-body-temp-path=/var/lib/nginx/body  --http-fastcgi-temp-path=/var/lib/nginx/fastcgi  --http-log-path=/var/log/nginx/access.log  --http-proxy-temp-path=/var/lib/nginx/proxy  --http-scgi-temp-path=/var/lib/nginx/scg --http-uwsgi-temp-path=/var/lib/nginx/uwsgi  --lock-path=/var/lock/nginx.lock      --pid-path=/var/run/nginx.pid  --with-http_gzip_static_module --with-http_realip_module  --with-http_stub_status_module  --with-http_ssl_module  --with-http_sub_module --with-sha1=/usr/include/openssl  --with-md5=/usr/include/openssl && make && sudo make install
 
 RUN mkdir -p /var/lib/nginx
 RUN mkdir -p /nginx
