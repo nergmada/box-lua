@@ -27,10 +27,10 @@ RUN sudo apt-get install -y curl wget
 # WEBP format
 RUN sudo apt-get install -y libwebp-dev devscripts
 
-#RUN wget http://www.imagemagick.org/download/releases/ImageMagick-6.8.9-10.tar.bz2
-RUN wget http://www.imagemagick.org/download/releases/ImageMagick-6.8.9-10.tar.xz
-RUN tar xf ImageMagick-6.8.9-10.tar.xz
-RUN cd ImageMagick-6.8.9-10 && ./configure --prefix=/usr --with-webp && make && make install
+#RUN wget http://www.imagemagick.org/download/releases/ImageMagick-6.9.2-6.tar.bz2
+RUN wget http://www.imagemagick.org/download/releases/ImageMagick-6.9.2-6.tar.xz
+RUN tar xf ImageMagick-6.9.2-6.tar.xz
+RUN cd ImageMagick-6.9.2-6 && ./configure --prefix=/usr --with-webp && make && make install
 
 RUN sudo apt-get install -y tcpdump htop gdb
 
